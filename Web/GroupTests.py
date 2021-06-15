@@ -8,4 +8,4 @@ HellowTest = unittest.TestLoader().loadTestsFromTestCase(HellowTestCase)
 # create a test suite combining search_test and home_page_test
 suitetests = unittest.TestSuite([HellowTest])
 # run the suite
-unittest.TextTestRunner(verbosity=2).run(suitetests)
+unittest.TextTestRunner(verbosity=2).run(GroupTests)
