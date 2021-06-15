@@ -10,4 +10,3 @@ GroupTests = unittest.TestSuite([HellowTest])
 # run the suite
 unittest.TextTestRunner(verbosity=2).run(GroupTests)
 
-print()
