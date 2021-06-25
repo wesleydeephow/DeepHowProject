@@ -1,9 +1,6 @@
 import unittest
 from selenium import webdriver
 import time
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 
 class HellowTestCase(unittest.TestCase):
     def setUp(self):
@@ -16,7 +13,11 @@ class HellowTestCase(unittest.TestCase):
         driver = self.driver
         print(driver.current_url)
         print(driver.title)
-        time.sleep(3)
+        url = driver.current_url
+        title = driver.title
+        self.assertEqual(url, "https://dev.deephow.net0/", "首頁網址錯誤")  # 驗證(expected預期在前，actual實際在後)
+        self.assertEqual(title, "DeepHow", "首頁標題錯誤")
+        time.sleep(2)
 
     def tearDown(self):
         self.driver.close()
