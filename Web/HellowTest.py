@@ -15,8 +15,8 @@ class HellowTestCase(unittest.TestCase):
         print(driver.title)
         url = driver.current_url
         title = driver.title
-        self.assertEqual(url, "https://dev.deephow.net0/", "首頁網址錯誤")  # 驗證(expected預期在前，actual實際在後)
-        self.assertEqual(title, "DeepHow", "首頁標題錯誤")
+        self.assertEqual(url, "https://dev.deephow.net/", "URL Error")  # 驗證(expected預期在前，actual實際在後)
+        self.assertEqual(title, "DeepHow", "Title Error")
         time.sleep(2)
 
     def tearDown(self):
