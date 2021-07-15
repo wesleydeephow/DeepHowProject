@@ -11,7 +11,10 @@ Business = unittest.TestLoader().loadTestsFromTestCase(BusinessCase)
 Workspaces = unittest.TestLoader().loadTestsFromTestCase(WorkspacesCase)
 
 # create a test suite combining search_test and home_page_test
-GroupTests = unittest.TestSuite([HellowTest, Signin, Business, Workspaces])
+GroupTests = unittest.TestSuite([HellowTest])
+GroupTests2 = unittest.TestSuite([Signin, Business, Workspaces])
+GroupTotal = unittest.TestSuite([GroupTests, GroupTests2])
+
 # run the suite
-unittest.TextTestRunner(verbosity=2).run(GroupTests)
+unittest.TextTestRunner(verbosity=2).run(GroupTotal)
 
