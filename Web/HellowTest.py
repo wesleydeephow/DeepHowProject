@@ -11,12 +11,13 @@ class HellowTestCase(unittest.TestCase):
 
     def test_HellowTest(self):
         driver = self.driver
+        time.sleep(2)
         print(driver.current_url)
         print(driver.title)
         url = driver.current_url
         title = driver.title
         self.assertEqual(url, "https://dev.deephow.net/", "URL Error")  # 驗證(expected預期在前，actual實際在後)
-        self.assertEqual(title, "DeepHow", "Title Error")
+        self.assertEqual(title, "DeepHow123", "Title Error")
         time.sleep(2)
 
     def tearDown(self):
