@@ -47,6 +47,9 @@ class WorkspacesCase(unittest.TestCase):
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[5]/section/div/div/section/div/div/form/div[2]/div/div[1]/div[1]/div[2]/div/i')))
         driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/section/div/div/form/div[2]/div/div[1]/div[1]/div[2]/div/i').click()
         driver.find_element_by_link_text("02021業務").click() #選業務
+        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[5]/section/div/div/section/div/div/form/div[3]/div/div[1]/div[1]/div[2]/div/i')))
+        driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/section/div/div/form/div[3]/div/div[1]/div[1]/div[2]/div/i').click() #點語言
+        driver.find_element_by_link_text("中文").click()
         driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/section/div/div/div[2]/button').click() #點新建按鈕
         time.sleep(2)
 
