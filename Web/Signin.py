@@ -15,8 +15,8 @@ class SigninCase(unittest.TestCase):
     def test_singin(self):
         driver = self.driver
         time.sleep(2)
-        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input'))) #顯示等待
-        driver.find_element_by_xpath('//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input').send_keys("wesley.chen+root@deephow.com")
+        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input'))) #顯示等待
+        driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input').send_keys("wesley.chen+root@deephow.com")
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "v-btn__content")))
         driver.find_element_by_class_name("v-btn__content").click()
         acct = driver.find_element_by_class_name("log-in-title").text
@@ -31,21 +31,21 @@ class SigninCase(unittest.TestCase):
         print(acct)
         self.assertEqual(acct, "你好, Wesley.Chen+root!", "acct Error") #驗證(expected預期在前，actual實際在後)
         time.sleep(2)
-        driver.find_element_by_xpath('//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input').send_keys("Pa$$w0rd")
+        driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input').send_keys("Pa$$w0rd")
         time.sleep(2)
         driver.find_element_by_class_name("v-btn__content").click()
         time.sleep(2)
-        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "v-menu__activator")))
-        driver.find_element_by_class_name("v-menu__activator").click()
+        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "v-avatar")))
+        driver.find_element_by_class_name("v-avatar").click()
         time.sleep(2)
-        name = driver.find_element_by_class_name("v-list__tile__title").text
-        email = driver.find_element_by_class_name("v-list__tile__sub-title").text
+        name = driver.find_element_by_class_name("text-xs-center").text
+        email = driver.find_element_by_class_name("email-id-text").text
         print(name)
         print(email)
         self.assertEqual(name, "R管理者", "Name Error") #驗證(expected預期在前，actual實際在後)
         self.assertEqual(email, "wesley.chen+root@deephow.com", "email Error") #驗證(expected預期在前，actual實際在後)
         time.sleep(2)
-        driver.find_element_by_class_name("signout-btn").click()
+        driver.find_element_by_class_name("logout-text").click()
         time.sleep(2)
 
     def tearDown(self):

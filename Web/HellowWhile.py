@@ -12,34 +12,35 @@ class HellowWhileCase(unittest.TestCase):
         self.driver.implicitly_wait(600)  #隱式等待60秒
         self.driver.get("https://dev.deephow.net/")
         time.sleep(2)
-        WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input'))) #顯示等待
-        self.driver.find_element_by_xpath('//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input').send_keys("wesley.chen+root@deephow.com")
+        WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input'))) #顯示等待
+        self.driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input').send_keys("wesley.chen+root@deephow.com")
         WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "v-btn__content")))
         self.driver.find_element_by_class_name("v-btn__content").click()
         time.sleep(2)
-        WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input'))) #顯示等待
-        self.driver.find_element_by_xpath('//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input').send_keys("Pa$$w0rd")
+        WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input'))) #顯示等待
+        self.driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input').send_keys("Pa$$w0rd")
         WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "v-btn__content")))
         self.driver.find_element_by_class_name("v-btn__content").click()
 
     def test_hellowwhile(self):
         driver = self.driver
+        time.sleep(2)
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "tool-bar-icon")))
         driver.find_element_by_class_name("tool-bar-icon").click()
-        aa = driver.find_element_by_link_text("管理").click()
-        #self.assertEqual(aa, "管理", "Title Error")
+        aa = driver.find_element_by_link_text("技能").click()
+        #self.assertEqual(aa, "技能", "Title Error")
         time.sleep(2)
 
         i = 1
         while i <= 3:
           WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "tool-bar-icon")))
           driver.find_element_by_class_name("tool-bar-icon").click()
-          driver.find_element_by_link_text("播放器").click()
+          driver.find_element_by_link_text("编辑器").click()
           time.sleep(2)
 
           WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "tool-bar-icon")))
           driver.find_element_by_class_name("tool-bar-icon").click()
-          driver.find_element_by_link_text("编辑器").click()
+          driver.find_element_by_link_text("管理").click()
           time.sleep(2)
           i = i + 1
           print(i)

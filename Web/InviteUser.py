@@ -13,13 +13,13 @@ class InvitesUserCase(unittest.TestCase):
         self.driver.implicitly_wait(600)  #隱式等待60秒
         self.driver.get("https://dev.deephow.net/")
         time.sleep(2)
-        WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input'))) #顯示等待
-        self.driver.find_element_by_xpath('//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input').send_keys("wesley.chen+root@deephow.com")
+        WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input'))) #顯示等待
+        self.driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input').send_keys("wesley.chen+root@deephow.com")
         WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "v-btn__content")))
         self.driver.find_element_by_class_name("v-btn__content").click()
         time.sleep(2)
-        WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input'))) #顯示等待
-        self.driver.find_element_by_xpath('//*[@id="app"]/div[2]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input').send_keys("Pa$$w0rd")
+        WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input'))) #顯示等待
+        self.driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input').send_keys("Pa$$w0rd")
         WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "v-btn__content")))
         self.driver.find_element_by_class_name("v-btn__content").click()
 
@@ -34,35 +34,34 @@ class InvitesUserCase(unittest.TestCase):
 
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "filter-div")))
         driver.find_element_by_class_name("filter-div").click() #點狀態
-        time.sleep(2)
         driver.find_element_by_partial_link_text("已邀请").click()
-        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[5]/section/div/div/div[2]/div[1]/button[2]')))
-        driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/div[2]/div[1]/button[2]').click() #點邀請用戶
         time.sleep(2)
 
-        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[6]/section/div/div/section/div/div/form/div[1]/div[1]/div/div/div[1]/div/input')))
-        driver.find_element_by_xpath('//*[@id="app"]/div[6]/section/div/div/section/div/div/form/div[1]/div[1]/div/div/div[1]/div/input').send_keys(current_time + "User") #填姓名
-        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="app"]/div[6]/section/div/div/section/div/div/form/div[2]/div/div[1]/div/input')))
-        driver.find_element_by_xpath('//*[@id="app"]/div[6]/section/div/div/section/div/div/form/div[2]/div/div[1]/div/input').send_keys("Wesley.chen+" + current_time + "@deephow.com") #填信箱
+        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[4]/section/div/div/div[2]/div[1]/button[2]')))
+        driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div/div[2]/div[1]/button[2]').click() #點邀請用戶
         time.sleep(2)
 
-        InvitesButton = driver.find_element_by_xpath('//*[@id="app"]/div[6]/section/div/div/section/div/div/div[2]/button')
+        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[5]/section/div/div/section/div/div/form/div[1]/div[1]/div/div/div[1]/div/input')))
+        driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/section/div/div/form/div[1]/div[1]/div/div/div[1]/div/input').send_keys(current_time + "User") #填姓名
+        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="app"]/div[5]/section/div/div/section/div/div/form/div[2]/div/div[1]/div/input')))
+        driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/section/div/div/form/div[2]/div/div[1]/div/input').send_keys("Wesley.chen+" + current_time + "@deephow.com") #填信箱
+        time.sleep(2)
+
+        InvitesButton = driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/section/div/div/div[2]/button')
         action = ActionChains(driver)
         action.double_click(InvitesButton).perform() #邀請按鈕點兩下
         time.sleep(2)
 
-        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="app"]/div[5]/section/div/div/section/div/div/div[2]/div/div[2]/button')))
-        driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/section/div/div/div[2]/div/div[2]/button').click() #點完成按鈕
+        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[4]/section/div/div/section/div/div/div[2]/div/div[2]/button')))
+        driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div/section/div/div/div[2]/div/div[2]/button').click() #點完成按鈕
         time.sleep(2)
 
-        #driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/div[2]/div[5]/div/div/table/thead/tr/th[1]/div/div/button/i').click() #點排序
-        #time.sleep(2)
-        driver.find_element_by_xpath('//*[@id="app"]/div[5]/section/div/div/div[2]/div[5]/div/div/table/tbody/tr[1]/td[5]/div/div[1]/button').click() #點邀請icon
-        time.sleep(2)
-
-        EmailCheck = driver.find_element_by_class_name("v-card__text").text #點選文字
-        print(EmailCheck)
-        self.assertEqual(EmailCheck, "你确定要重发邀请邮件给" + "wesley.chen+" + current_time + "@deephow.com" + "?", "兩值不對等")  #驗證(expected預期在前，actual實際在後)
+        firstname = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div/div[2]/div[5]/div/div/table/tbody/tr[1]/td[1]/span').text #點第一筆姓名
+        print(firstname)
+        self.assertEqual(current_time + "User", firstname, "兩值不對等") #驗證(expected預期在前，actual實際在後)
+        firstemail = driver.find_element_by_xpath('//*[@id="app"]/div[4]/section/div/div/div[2]/div[5]/div/div/table/tbody/tr[1]/td[2]').text #點第一筆信箱
+        print(firstemail)
+        self.assertEqual("wesley.chen+" + current_time + "@deephow.com", firstemail, "兩值不對等") #驗證(expected預期在前，actual實際在後)
         time.sleep(2)
 
     def tearDown(self):
