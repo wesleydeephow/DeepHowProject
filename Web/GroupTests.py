@@ -6,6 +6,7 @@ from InviteUser import InvitesUserCase
 from Teams import TeamsCase
 from WorkflowCategories import WorkflowCategoriesCase
 from InactiveUser import InactiveUserCase
+from TeamJoin import TeamJoinCase
 
 # get all tests from SearchProductTest and HomePageTest class
 Signin = unittest.TestLoader().loadTestsFromTestCase(SigninCase)
@@ -15,9 +16,10 @@ InviteUser = unittest.TestLoader().loadTestsFromTestCase(InvitesUserCase)
 Teams = unittest.TestLoader().loadTestsFromTestCase(TeamsCase)
 WorkflowCategories = unittest.TestLoader().loadTestsFromTestCase(WorkflowCategoriesCase)
 InactiveUser = unittest.TestLoader().loadTestsFromTestCase(InactiveUserCase)
+TeamJoin = unittest.TestLoader().loadTestsFromTestCase(TeamJoinCase)
 
 # create a test suite combining search_test and home_page_test
-GroupTests = unittest.TestSuite([Signin, Business, Workspaces, InviteUser, Teams, WorkflowCategories, InactiveUser])
+GroupTests = unittest.TestSuite([Signin, Business, Workspaces, InviteUser, Teams, WorkflowCategories, InactiveUser, TeamJoin])
 
 # run the suite
 unittest.TextTestRunner(verbosity=2).run(GroupTests)
