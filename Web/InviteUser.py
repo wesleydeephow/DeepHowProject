@@ -10,7 +10,7 @@ class InvitesUserCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()    #視窗最大化
-        self.driver.implicitly_wait(600)  #隱式等待60秒
+        self.driver.implicitly_wait(100)  #隱式等待10秒
         self.driver.get("https://dev.deephow.net/")
         time.sleep(2)
         WebDriverWait(self.driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input'))) #顯示等待

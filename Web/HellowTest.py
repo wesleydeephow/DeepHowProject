@@ -6,7 +6,7 @@ class HellowTestCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()    #視窗最大化
-        self.driver.implicitly_wait(600)  #隱式等待60秒
+        self.driver.implicitly_wait(100)  #隱式等待10秒
         self.driver.get("https://dev.deephow.net/")
 
     def test_HellowTest(self):
