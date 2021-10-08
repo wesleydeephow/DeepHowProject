@@ -56,17 +56,17 @@ class TeamJoinCase(unittest.TestCase):
 
         Username = driver.find_element_by_xpath('//*[@id="6100f264e24c97da0be4439c"]/div/div/div[2]/div/div[2]/div/div[2]/table/tbody/tr/td[1]/div/div[2]/div/span').text
         print(Username)
-        self.assertEqual("Worker", Username, "兩值不對等") #驗證(expected預期在前，actual實際在後)
+        self.assertEqual("wesley.chen+02021inp", Username, "兩值不對等") #驗證(expected預期在前，actual實際在後)
         time.sleep(2)
 
-        driver.find_element_by_xpath('//*[@id="6100f264e24c97da0be4439c"]/div/div/div[2]/div/div[2]/div/div[2]/table/tbody/tr/td[3]/button').click() #點刪除icon
+        driver.find_element_by_class_name("table-btn").click() #點刪除icon
         time.sleep(2)
 
-        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="app"]/div[2]/div/div[1]/div[2]/div[2]/button')))
-        driver.find_element_by_xpath('//*[@id="app"]/div[2]/div/div[1]/div[2]/div[2]/button').click() #點移除按鈕
+        WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "action-btn")))
+        driver.find_element_by_class_name("action-btn").click() #點移除按鈕
         time.sleep(2)
 
-        Message = driver.find_element_by_xpath('//*[@id="6100f264e24c97da0be4439c"]/div/div/div[2]/div/div[2]/div/div[2]/table/tfoot/div/span').text
+        Message = driver.find_element_by_class_name("row-msg-div-loading").text
         print(Message)
         self.assertEqual("还没有用户被添加到团队中。", Message, "兩值不對等")  # 驗證(expected預期在前，actual實際在後)
         time.sleep(2)
