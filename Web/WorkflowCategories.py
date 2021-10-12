@@ -25,7 +25,7 @@ class WorkflowCategoriesCase(unittest.TestCase):
     def test_workflowcategories(self):
         driver = self.driver
         current_time = time.strftime("%Y/%m/%d/ %H:%M:%S", time.localtime(time.time()))
-        #time.sleep(2)
+        time.sleep(2)
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "tool-bar-icon")))
         driver.find_element_by_class_name("tool-bar-icon").click()
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.LINK_TEXT, "管理")))

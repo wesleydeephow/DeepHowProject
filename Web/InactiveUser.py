@@ -25,6 +25,7 @@ class InactiveUserCase(unittest.TestCase):
 
     def test_inactiveuser(self):
         driver = self.driver
+        time.sleep(2)
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "tool-bar-icon")))
         driver.find_element_by_class_name("tool-bar-icon").click()
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.LINK_TEXT, "管理")))
