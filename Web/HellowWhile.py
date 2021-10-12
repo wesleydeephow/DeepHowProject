@@ -19,11 +19,11 @@ class HellowWhileCase(unittest.TestCase):
         self.driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input').send_keys("Pa$$w0rd")
         time.sleep(2)
         self.driver.find_element_by_class_name("v-btn__content").click()
-        time.sleep(2)
+        time.sleep(10)
 
     def test_hellowwhile(self):
         driver = self.driver
-        time.sleep(2)
+        #time.sleep(2)
         WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CLASS_NAME, "tool-bar-icon")))
         driver.find_element_by_class_name("tool-bar-icon").click()
         aa = driver.find_element_by_link_text("技能").click()
