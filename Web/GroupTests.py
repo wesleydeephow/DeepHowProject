@@ -19,7 +19,7 @@ Workspaces = unittest.TestLoader().loadTestsFromTestCase(WorkspacesCase)
 # TeamJoin = unittest.TestLoader().loadTestsFromTestCase(TeamJoinCase)
 
 # create a test suite combining search_test and home_page_test
-GroupTests = unittest.TestSuite([Signin, Business, Workspaces]), #InviteUser, Teams, WorkflowCategories, InactiveUser, TeamJoin])
+GroupTests = unittest.TestSuite([Signin, Business, Workspaces])#, InviteUser, Teams, WorkflowCategories, InactiveUser, TeamJoin])
 
 # run the suite
 unittest.TextTestRunner(verbosity=2).run(GroupTests)
