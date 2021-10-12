@@ -9,7 +9,7 @@ class HellowWhileCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()    #視窗最大化
-        self.driver.implicitly_wait(600)  #隱式等待60秒
+        self.driver.implicitly_wait(100)  #隱式等待10秒
         self.driver.get("https://dev.deephow.net/")
         time.sleep(2)
         self.driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/div[1]/form/div/div/div[1]/div/input').send_keys("wesley.chen+root@deephow.com")
@@ -19,7 +19,7 @@ class HellowWhileCase(unittest.TestCase):
         self.driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/div/div[1]/div[2]/div/form/div/div/div[1]/div[1]/input').send_keys("Pa$$w0rd")
         time.sleep(2)
         self.driver.find_element_by_class_name("v-btn__content").click()
-        time.sleep(10)
+        time.sleep(2)
 
     def test_hellowwhile(self):
         driver = self.driver
