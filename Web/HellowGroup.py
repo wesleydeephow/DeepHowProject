@@ -14,5 +14,7 @@ HellowTest = unittest.TestLoader().loadTestsFromTestCase(HellowTestCase)
 HellowGroup = unittest.TestSuite([HellowTest])
 
 # run the suite
-unittest.TextTestRunner(verbosity=2).run(HellowGroup)
+#unittest.TextTestRunner(verbosity=2).run(HellowGroup)
 
+if __name__ == '__main__':
+     unittest.TextTestRunner(verbosity=2).run(HellowGroup)
